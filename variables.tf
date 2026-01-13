@@ -34,7 +34,7 @@ variable "external_id" {
 variable "role_name" {
   description = "Name of the IAM role to create"
   type        = string
-  default     = "pgdog-client-hosted-role"
+  default     = "pgdog-enterprise-client-hosted-role"
 }
 
 variable "tags" {
