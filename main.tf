@@ -1,7 +1,13 @@
 data "aws_caller_identity" "current" {}
 
+# Generate a unique external ID if not provided
+resource "random_id" "external_id" {
+  byte_length = 32
+}
+
 locals {
-  account_id = data.aws_caller_identity.current.account_id
+  account_id  = data.aws_caller_identity.current.account_id
+  external_id = var.external_id != "" ? var.external_id : random_id.external_id.hex
 }
 
 # Trust policy document
@@ -19,7 +25,7 @@ data "aws_iam_policy_document" "trust_policy" {
     condition {
       test     = "StringEquals"
       variable = "sts:ExternalId"
-      values   = [var.external_id]
+      values   = [local.external_id]
     }
   }
 }

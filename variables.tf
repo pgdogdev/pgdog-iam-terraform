@@ -26,9 +26,9 @@ variable "pgdog_account_id" {
 }
 
 variable "external_id" {
-  description = "External ID for AssumeRole trust policy"
+  description = "External ID for AssumeRole trust policy. If not provided, a unique ID will be generated."
   type        = string
-  default     = "32b0a5561c176331ef68fbde550397191a005ee2cbf07414922cfa85cd8d1926"
+  default     = ""
 }
 
 variable "role_name" {
