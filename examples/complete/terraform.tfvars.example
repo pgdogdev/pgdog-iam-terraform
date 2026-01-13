@@ -1,0 +1,6 @@
+# Copy this file to terraform.tfvars and fill in your values
+
+eks_cluster_name       = "my-pgdog-cluster"
+rds_database_name      = "my-pgdog-db"
+route53_hosted_zone_id = "Z02965561036BDGGGL5TJ"
+aws_region             = "us-west-2"
