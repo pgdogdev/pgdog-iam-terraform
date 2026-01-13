@@ -16,5 +16,4 @@ output "permission_boundary_arn" {
 output "external_id" {
   description = "External ID used for AssumeRole trust policy (either provided or generated)"
   value       = local.external_id
-  sensitive   = true
 }
